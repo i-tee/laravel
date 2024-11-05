@@ -112,3 +112,6 @@ Route::screen('email', EmailSenderScreen::class)
                 ->parent('platform.index')
                 ->push('Email sender');
     });
+
+use App\Orchid\Screens\StateScreen;
+Route::screen('state', StateScreen::class)->name('state');
