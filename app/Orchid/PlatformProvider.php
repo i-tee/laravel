@@ -62,6 +62,9 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.example.cards')
                 ->divider(),
             */
+            Menu::make('Person')
+                ->icon('person-gear')
+                ->route('platform.developer.edit', 1),
 
             Menu::make('Email sender')
                 ->icon('envelope')

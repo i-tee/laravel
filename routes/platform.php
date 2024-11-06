@@ -124,3 +124,8 @@ Route::screen('post/{post?}', PostEditScreen::class)
 
 Route::screen('posts', PostListScreen::class)
     ->name('platform.post.list');
+
+use App\Orchid\Screens\DeveloperEditScreen;
+
+Route::screen('developer/{developer?}', DeveloperEditScreen::class)
+    ->name('platform.developer.edit');
