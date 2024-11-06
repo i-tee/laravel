@@ -62,6 +62,20 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.example.cards')
                 ->divider(),
             */
+
+            Menu::make('Email sender')
+                ->icon('envelope')
+                ->route('platform.email')
+                ->title('Tools'),
+
+            Menu::make('Click Count')
+                ->icon('plus')
+                ->route('platform.state'),
+
+            Menu::make('Posts')
+                ->icon('file-earmark-text')
+                ->route('platform.post.list'),
+
             Menu::make(__('Users'))
                 ->icon('bs.people')
                 ->route('platform.systems.users')
@@ -72,12 +86,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('bs.shield')
                 ->route('platform.systems.roles')
                 ->permission('platform.systems.roles')
-                ->divider(),
-
-            Menu::make('Email sender')
-                ->icon('envelope')
-                ->route('platform.email')
-                ->title('Tools')
+                ->divider()
             /*
             Menu::make('Documentation')
                 ->title('Docs')
