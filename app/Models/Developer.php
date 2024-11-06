@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Orchid\Screen\AsSource;
+use Orchid\Attachment\Attachable;
 
 class Developer extends Model
 {
     use HasFactory;
-    use AsSource;
+    use AsSource, Attachable;
 
     protected $fillable = [
         'nikname',
@@ -22,6 +23,7 @@ class Developer extends Model
         'email',
         'experiencedate',
         'birthdate',
-        'education'
+        'education',
+        'avatar_url'
     ];
 }

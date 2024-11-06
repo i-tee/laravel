@@ -7,6 +7,7 @@ use App\Models\Developer;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\Cropper;
 use Orchid\Screen\Fields\Quill;
 use Orchid\Screen\Fields\Relation;
 use Orchid\Screen\Fields\TextArea;
@@ -23,6 +24,9 @@ class DeveloperEditScreen extends Screen
 
     public function query(Developer $developer): array
     {
+
+        $developer->load('attachments');
+
         return [
             'developer' => $developer
         ];
@@ -62,6 +66,10 @@ class DeveloperEditScreen extends Screen
                 Input::make('developer.nikname')
                     ->title('Nick')
                     ->placeholder('nikname'),
+
+                Cropper::make('developer.avatar_url')
+                    ->targetRelativeUrl()
+                    ->title('Image generally'),
 
                 Input::make('developer.fio')
                     ->title('Name'),
