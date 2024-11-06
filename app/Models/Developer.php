@@ -15,6 +15,13 @@ class Developer extends Model
         'nikname',
         'fio',
         'city',
-        'content'
+        'content',
+        'profession',
+        'telegram_url',
+        'github_url',
+        'email',
+        'experiencedate',
+        'birthdate',
+        'education'
     ];
 }

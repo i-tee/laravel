@@ -11,6 +11,7 @@ use Orchid\Screen\Fields\Quill;
 use Orchid\Screen\Fields\Relation;
 use Orchid\Screen\Fields\TextArea;
 use Orchid\Screen\Fields\Upload;
+use Orchid\Screen\Fields\DateTimer;
 use Orchid\Support\Facades\Layout;
 use Orchid\Screen\Actions\Button;
 use Orchid\Support\Facades\Alert;
@@ -48,19 +49,16 @@ class DeveloperEditScreen extends Screen
             Button::make('Update')
                 ->icon('note')
                 ->method('createOrUpdate')
-                ->canSee($this->developer->exists),
-
-            Button::make('Remove')
-                ->icon('trash')
-                ->method('remove')
-                ->canSee($this->developer->exists),
+                ->canSee($this->developer->exists)
         ];
     }
 
     public function layout(): array
     {
         return [
+
             Layout::rows([
+
                 Input::make('developer.nikname')
                     ->title('Nick')
                     ->placeholder('nikname'),
@@ -68,14 +66,32 @@ class DeveloperEditScreen extends Screen
                 Input::make('developer.fio')
                     ->title('Name'),
 
-                Input::make('developer.city')
-                    ->title('City')
-                    ->placeholder('Moscow'),
+                DateTimer::make('developer.birthdate')
+                    ->title('Birth date'),
 
-                Quill::make('developer.content')
-                    ->title('Text')
+                DateTimer::make('developer.experiencedate')
+                    ->title('Experience start date'),
+
+                Input::make('developer.city')
+                    ->title('City'),
+                
+                Input::make('developer.profession')
+                    ->title('Profession'),
+                    
+                Input::make('developer.telegram_url')
+                    ->title('Telegram url'),
+                    
+                Input::make('developer.github_url')
+                    ->title('Github url'),
+                    
+                Input::make('developer.email')
+                    ->title('Email'),
+
+                Quill::make('developer.education')
+                    ->title('Education')
 
             ])
+
         ];
     }
 
@@ -83,17 +99,9 @@ class DeveloperEditScreen extends Screen
     {
         $this->developer->fill($request->get('developer'))->save();
 
-        Alert::info('You have successfully created a developer.');
+        Alert::info('You have successfully updated a developer.');
 
-        return redirect()->route('platform.developer.edit');
+        return redirect()->route('platform.developer.edit', 1);
     }
 
-    public function remove()
-    {
-        $this->developer->delete();
-
-        Alert::info('You have successfully deleted the developer.');
-
-        return redirect()->route('platform.developer.edit');
-    }
 }
