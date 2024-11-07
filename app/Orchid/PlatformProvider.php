@@ -71,6 +71,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.email')
                 ->title('Tools'),
 
+            /*
             Menu::make('Click Count')
                 ->icon('plus')
                 ->route('platform.state'),
@@ -79,6 +80,8 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('file-earmark-text')
                 ->route('platform.post.list'),
 
+            */
+            
             Menu::make(__('Users'))
                 ->icon('bs.people')
                 ->route('platform.systems.users')

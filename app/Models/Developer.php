@@ -26,4 +26,5 @@ class Developer extends Model
         'education',
         'avatar_url'
     ];
+
 }

@@ -15,4 +15,8 @@ use App\Http\Controllers\DeveloperController;
 |
 */
 
-Route::get('/', [DeveloperController::class, 'start']);
+Route::get('/', function () {
+    return view('app');
+});
+
+Route::get('/dev', [DeveloperController::class, 'start']);

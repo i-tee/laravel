@@ -10,7 +10,8 @@ class DeveloperController extends Controller
     public function start(){
 
         $developer = Developer::find(1);
-        dd($developer);
+        
+        return view('developer', [ 'developer' => $developer ]);
 
     }
 }
