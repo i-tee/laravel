@@ -116,6 +116,7 @@ Route::screen('email', EmailSenderScreen::class)
 use App\Orchid\Screens\StateScreen;
 Route::screen('state', StateScreen::class)->name('platform.state');
 
+/*
 use App\Orchid\Screens\PostEditScreen;
 use App\Orchid\Screens\PostListScreen;
 
@@ -124,6 +125,7 @@ Route::screen('post/{post?}', PostEditScreen::class)
 
 Route::screen('posts', PostListScreen::class)
     ->name('platform.post.list');
+*/
 
 use App\Orchid\Screens\DeveloperEditScreen;
 

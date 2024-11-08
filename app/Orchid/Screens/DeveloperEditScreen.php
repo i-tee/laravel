@@ -96,7 +96,10 @@ class DeveloperEditScreen extends Screen
                     ->title('Email'),
 
                 Quill::make('developer.education')
-                    ->title('Education')
+                    ->title('Education'),
+
+                Quill::make('developer.content')
+                    ->title('Stack')
 
             ])
 

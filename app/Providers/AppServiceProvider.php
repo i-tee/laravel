@@ -19,6 +19,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Привязываем FooterComposer к шаблону 'layouts.app' (или к любому другому шаблону, если нужно)
+        view()->composer(
+            'app', // Укажите имя шаблона, где нужно использовать данные
+            \App\Http\View\Composers\FooterComposer::class
+        );
     }
 }

@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\DeveloperController;
 
 /*
@@ -15,8 +14,10 @@ use App\Http\Controllers\DeveloperController;
 |
 */
 
-Route::get('/', function () {
+/*
+Route::get('/a', function () {
     return view('app');
 });
+*/
 
-Route::get('/dev', [DeveloperController::class, 'start']);
+Route::get('/', [DeveloperController::class, 'start']);
