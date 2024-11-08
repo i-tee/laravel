@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'hi you!')
+@section('title', $developer->fio.': '.$developer->profession)
 
 @section('content')
     
@@ -15,7 +15,7 @@
 
         <div class="col-md-8 themed-grid-col">
 
-            <div>
+            <div class="tee-main-info">
                 <h1>{{ $developer->fio }}</h1>
                 <h2>{{ $developer->profession }}</h2>
                 <p>г. {{ $developer->city }}</p>

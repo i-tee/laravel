@@ -129,3 +129,22 @@ use App\Orchid\Screens\DeveloperEditScreen;
 
 Route::screen('developer/{developer?}', DeveloperEditScreen::class)
     ->name('platform.developer.edit');
+
+
+use App\Orchid\Screens\SkillEditScreen;
+use App\Orchid\Screens\SkillListScreen;
+
+Route::screen('skill/{skill?}', SkillEditScreen::class)
+    ->name('platform.skill.edit');
+    
+Route::screen('skills', SkillListScreen::class)
+    ->name('platform.skill.list');
+
+use App\Orchid\Screens\SkillgroupEditScreen;
+use App\Orchid\Screens\SkillgroupListScreen;
+
+Route::screen('skillgroup/{skillgroup?}', SkillgroupEditScreen::class)
+    ->name('platform.skillgroup.edit');
+
+Route::screen('skillgroups', SkillgroupListScreen::class)
+    ->name('platform.skillgroup.list');
