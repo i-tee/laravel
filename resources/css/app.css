@@ -1,10 +1,29 @@
+
+div.tee-contacts a.btn-telegram:focus {
+    color: #ffffff;
+    border-color: #3689dca8;
+    box-shadow: 0 0 0 .25rem rgb(54 137 220 / 45%);
+}
 div.tee-contacts a.btn-telegram {
-    background: rgb(27, 69, 146);
-    border-color: rgb(27, 69, 146);
+    background: rgb(54 137 220);
+    border-color: rgb(54 137 220);
     color: white;
 }
 div.tee-contacts a.btn-github {
     background: rgb(27, 27, 27);
     border-color: rgb(27, 27, 27);
     color: white;
+}
+div.tee-main-info span.badge.rounded-pill {
+    background-color: #565656 !important;
+}
+div.tab-section p {
+    margin: 1rem 0 0 0;
+}
+div.tee-avatar img {
+    max-width: 100%;
+}
+div.tee-orchid-ol-correct ol {
+    list-style: disc;
+    margin-top: -1rem;
 }
