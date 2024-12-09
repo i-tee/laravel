@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeveloperController;
+use App\Http\Controllers\TestController;
+
+
+
+Route::get('/calc395', [TestController::class, 'index']);
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +27,4 @@ Route::get('/a', function () {
 */
 
 Route::get('/', [DeveloperController::class, 'start']);
+
